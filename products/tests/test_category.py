@@ -1,3 +1,5 @@
+import os
+import django
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
@@ -6,6 +8,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')  # To‘g‘ri modul nomini yozing
+django.setup()
+
+
 
 
 class CategoryTests(APITestCase):
